@@ -1,0 +1,29 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+const links = [
+  { url: "/blogs", title: "文章" },
+  { url: "/projects", title: "项目" },
+];
+---
+
+<!-- IMPROVE: add title to correct <head> instead of <body> -->
+<BaseLayout>
+  <header>
+    <nav class="flex flex-row justify-end space-x-4 text-xl pb-8">
+      <a href={"/"} class="no-underline hover:underline font-bold">
+        Lava's Blog
+      </a>
+      <div class="flex-grow"></div>
+      {
+        links.map((link: { url: string; title: string }) => {
+          return (
+            <a href={link.url} class="no-underline hover:underline font-bold">
+              {link.title}
+            </a>
+          );
+        })
+      }
+    </nav>
+  </header>
+  <slot />
+</BaseLayout>

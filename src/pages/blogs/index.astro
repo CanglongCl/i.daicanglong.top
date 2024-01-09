@@ -1,0 +1,26 @@
+---
+import ContentLayout from "../../layouts/ContentLayout.astro";
+const allPosts = await Astro.glob("./*.md");
+---
+
+<ContentLayout>
+  <div class="py-2">
+    {
+      allPosts.map((post) => {
+        const { title, pubDate } = post.frontmatter;
+        return (
+          <div class="py-1 flex gap-2">
+            <a
+              href={post.url}
+              class="no-underline hover:underline font-normal text-gray-700"
+            >
+              {title}
+            </a>
+            <div class="flex-grow" />
+            <div class="text-gray-400">{pubDate}</div>
+          </div>
+        );
+      })
+    }
+  </div>
+</ContentLayout>

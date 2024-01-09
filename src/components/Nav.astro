@@ -1,0 +1,20 @@
+---
+const url = Astro.url;
+const links = [
+  { url: "/blogs", title: "文章" },
+  { url: "/projects", title: "项目" },
+];
+---
+
+<nav class="inline-flex flex-row space-x-4 pb-5 text-xl">
+    <!-- <a href={"/"} class="font-bold no-underline pr-5">Lava's Blog</a> -->
+    {
+        links.map((link: { url: string; title: string }) => {
+            return (
+                <a href={link.url} class="no-underline font-bold">
+                    {link.title}
+                </a>
+            )
+        })
+    }
+</nav>

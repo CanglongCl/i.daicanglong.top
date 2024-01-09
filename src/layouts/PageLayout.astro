@@ -1,0 +1,28 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+import Nav from "../components/Nav.astro";
+const links = [
+  { url: "/blogs", title: "文章" },
+  { url: "/projects", title: "项目" },
+];
+---
+
+<BaseLayout>
+  <header>
+    <nav class="text-center">
+      <a class="no-underline text-center" href="/"><h1>Lava's Blog</h1></a>
+      <div class="inline-flex flex-row justify-center space-x-4 pb-5 text-xl">
+        {
+          links.map((link: { url: string; title: string }) => {
+            return (
+              <a href={link.url} class="no-underline hover:underline font-bold">
+                {link.title}
+              </a>
+            );
+          })
+        }
+      </div>
+    </nav>
+  </header>
+  <slot />
+</BaseLayout>
