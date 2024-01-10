@@ -4,9 +4,9 @@ title: 作品介绍——「披萨小助手」系列游戏工具 App
 pubDate: 2024年1月6日
 ---
 
-**披萨小助手**是由本人从零到一设计与开发，并由由本人创立的 <a href="https://pizzastudio.org" target="_blank">披萨工作室</a> 维护的系列游戏工具 APP，包括<a href="https://apps.apple.com/app/id1635319193" target="_blank">「原神披萨小助手」</a>与<a href="https://apps.apple.com/app/id6448894222" target="_blank">「星铁披萨小助手」</a>，分别服务于「原神」与「崩坏：星穹铁道」玩家。披萨小助手深受全球用户喜爱，合计下载量超 50 万，日活用户超过 5 万人，App Store 评分 4.9/5.0。
+**披萨小助手**是由本人从零到一设计与开发，并由由本人创立的 [披萨工作室](popover '<a href="https://pizzastudio.org" target="_blank">跳转至官方网站</a>') 维护的系列游戏工具 APP，包括[「原神披萨小助手」](popover '<a href="https://apps.apple.com/app/id1635319193" target="_blank">跳转至 App Store 产品页</a>')与[「星铁披萨小助手」](popover '<a href="https://apps.apple.com/app/id6448894222" target="_blank">跳转至 App Store 产品页</a>')，分别服务于「原神」与「崩坏：星穹铁道」玩家。披萨小助手深受全球用户喜爱，合计下载量超 50 万，日活用户超过 5 万人，App Store 评分 4.9/5.0。
 
-![原神披萨小助手和星铁披萨小助手的图标](/images/op-hsr-icon.png)
+![原神披萨小助手和星铁披萨小助手的图标](/images/op-hsr-icon.png "原神披萨小助手和星铁披萨小助手的图标")
 
 其中，原神披萨小助手发布较早、功能较多，故下以原神披萨小助手为例介绍项目。
 
@@ -16,13 +16,13 @@ pubDate: 2024年1月6日
 
 原神是由米哈游开发的一款在线开放世界冒险游戏，其中**被称为“树脂”的体力机制**是本软件关注的重点对象。玩家使用体力可以获得游戏资源，体力会随时间恢复，但具有上限，充满时会停止增加。因此，玩家需要定期登录游戏消耗体力，防止体力溢出，否则会损失游戏资源。本软件核心能力即是通过系统小组件将用户体力（及其他玩家状态）显示于用户的主屏幕或锁定屏幕上，让用户无需打开游戏就能检查自己的体力恢复情况，并籍此按需登录游戏，使用体力。
 
-![各小组件演示](/images/gi-ss-1.png)
+![各小组件演示](/images/gi-ss-1.png "各小组件展示")
 
 同时，在玩家体力溢出等情况下，本软件还会向玩家发送通知。这些功能极大帮助了玩家对体力等玩家状态的掌控，满足了玩家需求。因此软件一经发布，就收获了大量关注，<a href="https://www.bilibili.com/video/BV1sS4y1x7gj" target="_blank">首个宣发视频</a>登上了 B 站热门榜，收获了 30 万次播放量。
 
 随后，项目经过经过需求调研与分析，明确了产品规划与定位，并在后续迭代与更新中又推出了诸多用户喜爱的功能，在用户获取、用户留存与用户体验上都获得了优异成绩。
 
-![其他功能](/images/gi-other-fn.png)
+![其他功能](/images/gi-other-fn.png "其他功能")
 
 在项目进行过程中，优秀的产品素质吸引了诸多同好的加入，最终形成了披萨工作室团队。目前，披萨工作室共有核心开发成员 3 名与翻译志愿者数名。团队支持了披萨小助手系列产品的迭代更新与国际化工作。目前披萨小助手仍在持续迭代，并支持包括简体中文、繁体中文、英语、法语、俄语、日语、韩语、葡萄牙语、意大利语、越南语、菲律宾语在内的 11 种语言。
 
@@ -66,14 +66,14 @@ APP 在 B 站的宣发视频登上了热搜，各视频合计播放量超过 40 
 - <a href="https://www.bilibili.com/video/BV1fC4y1v7yx/" target="_blank">[我全都要！超好用的全能原神工具 App【披萨小助手】]()</a>
 - <a href="https://www.bilibili.com/video/BV1sN4y1i7Cj" target="_blank">【原神】可能是最好的原神工具 APP，原披小助手 4.0 现已上线</a>
 
-![image-20240107161124057](/images/image-20240107161124057.png)
+![image-20240107161124057](/images/image-20240107161124057.png "宣传视频后台数据")
 
 APP 在日本受到了广泛关注，起初受到日本博主たお（Twitter：@taotao_hoyo）在 Twitter 推荐，推文浏览量超过 100 万，并登上热搜，随后形成了裂变效果，得到了日本数家游戏媒体的报道。目前在 Twitter 日语社区上仍能搜索到大量推荐与好评。
 
 - <a href="https://snsdays.com/game-app/genshin-pizza-tool/" target="_blank">原神ピザ助手の使い方と安全性について徹底解説</a>（日媒报道）
 - <a href="https://twitter.com/search?q=%E3%83%94%E3%82%B6%E5%8A%A9%E6%89%8B&src=typed_query&f=live" target="_blank">推特搜索「ピザ助手」</a>
 
-![img_v2_6611d097-c389-472e-85f1-ea3f7f64814g](/images/gi-tt-1.png)
+![img_v2_6611d097-c389-472e-85f1-ea3f7f64814g](/images/gi-tt-1.png "推特情况")
 
 ### 下载
 

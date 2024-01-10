@@ -83,7 +83,7 @@ const links = [
         data-drawer-body-scrolling="true"
       >
         <svg
-          class="flex-no-shrink fill-current h-[1.4rem] w-[1.4rem] scale-x-[-1]"
+          class="flex-no-shrink fill-current h-[1.35rem] w-[1.35rem] scale-x-[-1]"
           viewBox="0 0 1297 1024"
           version="1.1"
           xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@ const links = [
             return headings.map((heading) => {
               return (
                 <li>
-                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                  <a href={`#${heading.slug}`} class="no-underline hover:underline">{heading.text}</a>
                   {heading.children.length > 0 && (
                     <ul>{renderHeadings(heading.children)}</ul>
                   )}
