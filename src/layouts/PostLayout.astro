@@ -60,14 +60,20 @@ const links = [
     <nav
       class="flex flex-row justify-end space-x-4 text-xl py-3 bg-white text-black h-17"
     >
-      <a href={"/"} class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17">
+      <a
+        href={"/"}
+        class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17"
+      >
         Lava's Blog
       </a>
       <div class="flex-grow"></div>
       {
         links.map((link: { url: string; title: string }) => {
           return (
-            <a href={link.url} class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17">
+            <a
+              href={link.url}
+              class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17"
+            >
               {link.title}
             </a>
           );
@@ -108,7 +114,10 @@ const links = [
     tabindex="-1"
     aria-labelledby="drawer-right-label"
   >
-    <h5 id="drawer-right-label" class="inline-flex items-center mb-4 font-bold text-black">
+    <h5
+      id="drawer-right-label"
+      class="inline-flex items-center mb-4 font-bold text-black"
+    >
       目录
     </h5>
     <button
@@ -140,7 +149,14 @@ const links = [
             return headings.map((heading) => {
               return (
                 <li>
-                  <a href={`#${heading.slug}`} class="no-underline hover:underline">{heading.text}</a>
+                  <a
+                    href={`#${heading.slug}`}
+                    class="no-underline hover:underline"
+                    data-drawer-hide="drawer-right-example"
+                    aria-controls="drawer-right-example"
+                  >
+                    {heading.text}
+                  </a>
                   {heading.children.length > 0 && (
                     <ul>{renderHeadings(heading.children)}</ul>
                   )}
@@ -151,9 +167,14 @@ const links = [
         }
       </ul>
     </nav>
-    <button id="back-to-top-btn" class="underline absolute font-bold text-black bottom-0 pb-5 w-full bg-white">
+    <button
+      id="back-to-top-btn"
+      class="underline absolute font-bold text-black bottom-0 pb-5 w-full bg-white"
+      data-drawer-hide="drawer-right-example"
+      aria-controls="drawer-right-example"
+    >
       返回顶部
-    </butt>
+    </button>
   </div>
   <slot />
 </BaseLayout>
@@ -166,7 +187,7 @@ const links = [
       top: 0,
       behavior: "smooth",
     });
-  }
+  };
 
   if (backToTopButton) {
     backToTopButton.addEventListener("click", backToTop);
