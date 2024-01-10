@@ -1,4 +1,6 @@
 ---
+import '../style/global.css';
+
 import BaseLayout from "./BaseLayout.astro";
 
 const {
@@ -58,11 +60,11 @@ const links = [
 <BaseLayout>
   <header class="sticky top-0 w-full mb-5">
     <nav
-      class="flex flex-row justify-end space-x-4 text-xl py-3 bg-white text-black h-17"
+      class="flex flex-row justify-end space-x-4 text-xl py-3 bg-white text-black "
     >
       <a
         href={"/"}
-        class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17"
+        class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold"
       >
         Lava's Blog
       </a>
@@ -72,7 +74,7 @@ const links = [
           return (
             <a
               href={link.url}
-              class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17"
+              class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold"
             >
               {link.title}
             </a>
@@ -80,7 +82,7 @@ const links = [
         })
       }
       <button
-        class="no-underline border-y-transparent border-y-2 hover:border-b-black fill-black h-17"
+        class="no-underline border-y-transparent border-y-2 hover:border-b-black fill-black"
         type="button"
         data-drawer-target="drawer-right-example"
         data-drawer-show="drawer-right-example"
