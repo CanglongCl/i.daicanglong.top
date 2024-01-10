@@ -8,16 +8,16 @@ const links = [
 
 <!-- IMPROVE: add title to correct <head> instead of <body> -->
 <BaseLayout>
-  <header>
-    <nav class="flex flex-row justify-end space-x-4 text-xl pb-8">
-      <a href={"/"} class="no-underline hover:underline font-bold">
+  <header class="sticky top-0 w-full mb-5">
+    <nav class="flex flex-row justify-end space-x-4 text-xl py-3 bg-white ">
+      <a href={"/"} class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold">
         Lava's Blog
       </a>
       <div class="flex-grow"></div>
       {
         links.map((link: { url: string; title: string }) => {
           return (
-            <a href={link.url} class="no-underline hover:underline font-bold">
+            <a href={link.url} class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold">
               {link.title}
             </a>
           );

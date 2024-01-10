@@ -1,11 +1,174 @@
 ---
-const { title, pubDate } = Astro.props.frontmatter;
-import ContentLayout from "./ContentLayout.astro";
+import BaseLayout from "./BaseLayout.astro";
+
+const {
+  title,
+  pubDate,
+}: {
+  title: string;
+  pubDate: string;
+} = Astro.props.frontmatter;
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+const headings: Heading[] = Astro.props.headings;
+
+interface HeadingWithChildren extends Heading {
+  children: HeadingWithChildren[];
+}
+
+function getNestedHeadings(headings: Heading[]): HeadingWithChildren[] {
+  const root: HeadingWithChildren[] = [];
+  const stack: HeadingWithChildren[] = [];
+
+  headings.forEach((heading) => {
+    const node: HeadingWithChildren = { ...heading, children: [] };
+
+    // If the stack is empty or this node is less deep, it's a new root node
+    if (!stack.length || node.depth <= stack[0].depth) {
+      root.push(node);
+      stack.length = 0; // Clear the stack
+      stack.push(node);
+    } else {
+      // Find the parent node
+      while (stack.length > 1 && stack[stack.length - 1].depth >= node.depth) {
+        stack.pop();
+      }
+
+      // Add this node as a child of the parent node
+      const parent = stack[stack.length - 1];
+      parent.children.push(node);
+      stack.push(node); // Add this node to the stack
+    }
+  });
+
+  return root;
+}
+
+const links = [
+  { url: "/blogs", title: "文章" },
+  { url: "/projects", title: "项目" },
+];
 ---
 
-<!-- IMPROVE: add title to correct <head> instead of <body> -->
-<ContentLayout>
+<BaseLayout>
+  <header class="sticky top-0 w-full mb-5">
+    <nav
+      class="flex flex-row justify-end space-x-4 text-xl py-3 bg-white text-black h-17"
+    >
+      <a href={"/"} class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17">
+        Lava's Blog
+      </a>
+      <div class="flex-grow"></div>
+      {
+        links.map((link: { url: string; title: string }) => {
+          return (
+            <a href={link.url} class="no-underline border-y-transparent border-y-2 hover:border-b-black font-bold h-17">
+              {link.title}
+            </a>
+          );
+        })
+      }
+      <button
+        class="no-underline border-y-transparent border-y-2 hover:border-b-black fill-black h-17"
+        type="button"
+        data-drawer-target="drawer-right-example"
+        data-drawer-show="drawer-right-example"
+        data-drawer-placement="right"
+        aria-controls="drawer-right-example"
+        data-drawer-body-scrolling="true"
+      >
+        <svg
+          class="flex-no-shrink fill-current h-[1.4rem] w-[1.4rem] scale-x-[-1]"
+          viewBox="0 0 1297 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          p-id="5071"
+          ><path
+            d="M1283.413333 887.466667c7.509333 0 13.653333 6.144 13.653334 13.653333v109.226667a13.653333 13.653333 0 0 1-13.653334 13.653333H81.92a13.653333 13.653333 0 0 1-13.653333-13.653333v-109.226667c0-7.509333 6.144-13.653333 13.653333-13.653333h1201.493333zM79.0528 330.1376a13.653333 13.653333 0 0 1 6.144 1.4336l300.168533 151.688533a13.653333 13.653333 0 0 1 1.2288 23.688534l-300.168533 192.034133a13.653333 13.653333 0 0 1-21.026133-11.4688V343.790933c0-7.509333 6.144-13.653333 13.653333-13.653333zM1283.413333 546.133333c7.509333 0 13.653333 6.144 13.653334 13.653334v109.226666a13.653333 13.653333 0 0 1-13.653334 13.653334H559.786667a13.653333 13.653333 0 0 1-13.653334-13.653334V559.786667c0-7.509333 6.144-13.653333 13.653334-13.653334h723.626666z m0-273.066666c7.509333 0 13.653333 6.144 13.653334 13.653333v109.226667a13.653333 13.653333 0 0 1-13.653334 13.653333H559.786667a13.653333 13.653333 0 0 1-13.653334-13.653333V286.72c0-7.509333 6.144-13.653333 13.653334-13.653333h723.626666z m0-273.066667c7.509333 0 13.653333 6.144 13.653334 13.653333v109.226667a13.653333 13.653333 0 0 1-13.653334 13.653333H81.92a13.653333 13.653333 0 0 1-13.653333-13.653333V13.653333c0-7.509333 6.144-13.653333 13.653333-13.653333h1201.493333z"
+            fill="#313131"
+            p-id="5072"></path></svg
+        >
+      </button>
+    </nav>
+  </header>
   <h1>{title}</h1>
-  <div class="text-gray-400 text-sm">{pubDate}</div>
+  <div class="flex text-gray-400 text-sm">
+    <div>{pubDate}</div>
+    <div class="flex-grow"></div>
+  </div>
+
+  <div
+    id="drawer-right-example"
+    class="fixed top-0 right-0 z-40 h-screen p-4 overflow-y-auto transition-transform translate-x-full bg-white w-80 border-l-3"
+    tabindex="-1"
+    aria-labelledby="drawer-right-label"
+  >
+    <h5 id="drawer-right-label" class="inline-flex items-center mb-4 font-bold text-black">
+      目录
+    </h5>
+    <button
+      type="button"
+      data-drawer-hide="drawer-right-example"
+      aria-controls="drawer-right-example"
+      class="text-gray-900 w-10 h-10 absolute top-2.5 end-2.5 inline-flex items-center justify-center"
+    >
+      <svg
+        class="w-3 h-3"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 14 14"
+      >
+        <path
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"></path>
+      </svg>
+      <span class="sr-only">Close menu</span>
+    </button>
+    <nav>
+      <ul>
+        {
+          (function renderHeadings(headings: HeadingWithChildren[]) {
+            return headings.map((heading) => {
+              return (
+                <li>
+                  <a href={`#${heading.slug}`}>{heading.text}</a>
+                  {heading.children.length > 0 && (
+                    <ul>{renderHeadings(heading.children)}</ul>
+                  )}
+                </li>
+              );
+            });
+          })(getNestedHeadings(headings))
+        }
+      </ul>
+    </nav>
+    <button id="back-to-top-btn" class="underline absolute font-bold text-black bottom-0 pb-5 w-full bg-white">
+      返回顶部
+    </butt>
+  </div>
   <slot />
-</ContentLayout>
+</BaseLayout>
+
+<script>
+  const backToTopButton = document.getElementById("back-to-top-btn");
+
+  const backToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
+  if (backToTopButton) {
+    backToTopButton.addEventListener("click", backToTop);
+  }
+</script>

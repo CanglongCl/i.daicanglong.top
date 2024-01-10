@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav-bar-item-hover {
+    @apply no-underline border-y-transparent border-y-2 hover:border-b-black;
+  }
+}

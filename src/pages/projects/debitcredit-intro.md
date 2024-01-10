@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: 作品介绍——「DebitCredit」记账工具 App
-date: 2024年1月6日
+pubDate: 2024年1月6日
 ---
 
 **DebitCredit** 是一款**基于复式记账法的记账工具 App**，也是本人在 WWDC 2023 学生挑战赛的提交的参赛作品。通过精心设计，DebitCredit 能让即使没有会计学知识的普通人也能轻松借助复式记账法这一强大工具管理自己的财务。
