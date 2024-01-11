@@ -4,7 +4,7 @@ title: 作品介绍——「披萨小助手」系列游戏工具 App
 pubDate: 2024年1月6日
 ---
 
-**披萨小助手**是由本人从零到一设计与开发，并由由本人创立的 [披萨工作室](popover '<a href="https://pizzastudio.org" target="_blank">跳转至官方网站</a>') 维护的系列游戏工具 APP，包括[「原神披萨小助手」](popover '<a href="https://apps.apple.com/app/id1635319193" target="_blank">跳转至 App Store 产品页</a>')与[「星铁披萨小助手」](popover '<a href="https://apps.apple.com/app/id6448894222" target="_blank">跳转至 App Store 产品页</a>')，分别服务于「原神」与「崩坏：星穹铁道」玩家。披萨小助手深受全球用户喜爱，合计下载量超 50 万，日活用户超过 5 万人，App Store 评分 4.9/5.0。
+**披萨小助手**是由本人从零到一设计与开发，并由由本人创立的 [披萨工作室](popover '<a href="https://pizzastudio.org" target="_blank">跳转至官方网站</a>') 维护的，非盈利的系列游戏工具 APP，包括[《原神披萨小助手》](popover '<a href="https://apps.apple.com/app/id1635319193" target="_blank">跳转至 App Store 产品页</a>')与[《星铁披萨小助手》](popover '<a href="https://apps.apple.com/app/id6448894222" target="_blank">跳转至 App Store 产品页</a>')，分别服务于《原神》与《崩坏：星穹铁道》玩家。披萨小助手深受全球用户喜爱，合计下载量超 50 万，日活用户超过 5 万人，App Store 评分 4.9/5.0。
 
 ![原神披萨小助手和星铁披萨小助手的图标](/images/op-hsr-icon.png "原神披萨小助手和星铁披萨小助手的图标")
 

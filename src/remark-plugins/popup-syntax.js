@@ -11,7 +11,7 @@ export function popupSyntax() {
           // 这里只生成一个基本的HTML结构作为示例
           // 你可以根据需要添加更复杂的HTML和JavaScript
           value: `
-          <a href="#" class="decoration-dashed font-normal" data-popover-target="popover-image-${id}">${node.children[0].value}</a>
+          <span class="underline decoration-dashed font-normal" data-popover-target="popover-image-${id}">${node.children[0].value}</span>
           `,
         };
         // 替换原有节点

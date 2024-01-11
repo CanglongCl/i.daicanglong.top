@@ -1,6 +1,6 @@
 # Lava的博客
 
-呈现网址：[Lava's Blog](i.daicanglong.top)
+呈现网址：[Lava's Blog](https://i.daicanglong.top)
 
 框架：
 - [Astro](https://astro.build/)
