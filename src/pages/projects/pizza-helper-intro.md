@@ -109,3 +109,17 @@ APP 在日本受到了广泛关注，起初受到日本博主たお（Twitter：
 | 其他     | 42,742  | 9.95%  |
 
 ![image-20240107173642393](/images/image-20240107173642393.png)
+
+## 拆解文档
+
+作为作品集的一部分，我为披萨小助手写作了一份详尽的产品自我拆解文档，欢迎查看。以下是其目录：
+
+[〇、序](/blogs/gi-product-dismantle-0)
+
+[一、产品定位与规划、需求的产生与决策、功能设计原则](/blogs/gi-product-dismantle-1)
+
+[二、小助手的核心功能拆解](/blogs/gi-product-dismantle-2)
+
+[三、小助手功能的相对优势](/blogs/gi-product-dismantle-3)
+
+[四、获客](/blogs/gi-product-dismantle-4)
