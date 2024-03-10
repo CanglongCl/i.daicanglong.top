@@ -6,21 +6,24 @@ const allPosts = await Astro.glob("./*.md");
 <ContentLayout>
   <div class="grid gap-2 py-2">
     {
-      allPosts.map((post) => {
-        const { title, pubDate } = post.frontmatter;
-        return (
-          <div class="grid grid-cols-[auto_1fr_auto] items-center gap-2 py-1">
-            <a
-              href={post.url}
-              class="no-underline hover:underline font-normal text-gray-700"
-            >
-              {title}
-            </a>
-            <div class="flex-grow" />
-            <div class="text-gray-400">{pubDate}</div>
-          </div>
-        );
-      })
+      allPosts
+        .sort((a, b) => b.frontmatter.pubDate - a.frontmatter.pubDate)
+        .reverse()
+        .map((post) => {
+          const { title, pubDate } = post.frontmatter;
+          return (
+            <div class="grid grid-cols-[auto_1fr_auto] items-center gap-2 py-1">
+              <a
+                href={post.url}
+                class="no-underline hover:underline font-normal text-gray-700"
+              >
+                {title}
+              </a>
+              <div class="flex-grow" />
+              <div class="text-gray-400">{pubDate}</div>
+            </div>
+          );
+        })
     }
   </div>
 </ContentLayout>
