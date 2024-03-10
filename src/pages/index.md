@@ -6,7 +6,7 @@ layout: ../layouts/PageLayout.astro
 
 ## 最新文章
 
-
+- [崩铁运营求职攻略](/blogs/mhy_interview_prepare.md)（2024年3月9日）
 
 ## 项目
 

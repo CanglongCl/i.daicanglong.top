@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: 原神披萨小助手产品自我拆解 —— 三、小助手功能的相对优势
-pubDate: 2023年1月13日
+pubDate: 2024年1月13日
 ---
 
 ## 拆解文档导航

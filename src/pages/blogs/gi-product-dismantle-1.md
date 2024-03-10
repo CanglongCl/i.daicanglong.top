@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: 原神披萨小助手产品自我拆解 —— 一、产品定位与规划、需求的产生与决策、功能设计原则
-pubDate: 2023年1月10日
+pubDate: 2024年1月10日
 ---
 
 ## 拆解文档导航
